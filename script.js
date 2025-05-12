@@ -45,12 +45,12 @@ function depositMoney() {
         return;
     }
 
-    balance += amount; // 🟢 Cộng tiền vào số dư tài khoản
-    balanceDisplay.innerText = `$${balance.toFixed(2)}`; // 🟢 Cập nhật hiển thị
+    balance += amount; 
+    balanceDisplay.innerText = `$${balance.toFixed(2)}`; 
 
     const message = `✅ Đã nạp thành công $${amount} bằng ${method}`;
     
-    alert(message); // 🟢 Hiển thị thông báo bằng `alert()`
+    alert(message); 
     statusMessage.innerText = message;
 
     console.log(`✅ Đã cập nhật số dư: $${balance.toFixed(2)}`);
