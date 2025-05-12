@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <h2>🔐 Đăng ký</h2>
+        <input type="text" id="new-username" placeholder="Tên đăng nhập">
+        <input type="password" id="new-password" placeholder="Mật khẩu">
+        <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu">
+        <button onclick="register()">Đăng ký</button>
+        <p>Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a></p>
+    </div>
+    <div id="popup" class="popup">
+    <div class="popup-content">
+        <p id="popup-message">Vui lòng đăng ký trước</p>
+        <button onclick="closePopup()">Đóng</button>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

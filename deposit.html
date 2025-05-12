@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nạp Tiền</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="deposit.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Crypto Planet</h1>
+        <nav>
+            <div id="menu-icon" onclick="toggleMenu()">...</div>
+                <div id="menu-content">
+            <a href="index.html">Trang Chủ</a>
+            <a href="market.html">Thị Trường</a>
+            <a href="deposit.html">Giao Dịch</a>
+            <a href="support.html">Hỗ Trợ</a>
+            <a href="login.html" id="login-btn">Đăng nhập</a>
+            <div id="login-section" style="display: none;">
+                <img id="avatar-display" src="" alt="Avatar" class="avatar">
+                <span id="username-display"></span>
+                <button class="logout-btn" onclick="logout()">Đăng xuất</button>
+             </div>
+            </div>
+        </nav>
+    </header>
+    <h2>💰 Nạp Tiền </h2>
+    <h3>Số dư tài khoản: <span id="balance">0$</span></h3>
+
+    <label for="amount">Số tiền cần nạp ($):</label>
+    <input type="number" id="amount" placeholder="Nhập số tiền" min="1">
+
+    <label for="payment-method">Phương thức thanh toán:</label>
+    <select id="payment-method">
+        <option value="bank">Ngân hàng</option>
+        <option value="crypto">Tiền điện tử</option>
+        <option value="wallet">Ví điện tử</option>
+    </select>
+
+    <button onclick="depositMoney()">💸 Nạp ngay</button>
+    <div id="popup-container" class="hidden"></div>
+    <p id="status-message"></p>
+
+     
+
+    <script src="script.js"></script>
+</body>
+</html>

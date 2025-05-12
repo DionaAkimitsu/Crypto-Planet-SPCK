@@ -1,0 +1,522 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.market-container, .favorite-coins {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+
+/* 🎨 Chủ đề màu sắc Binance */
+:root {
+    --primary-color: #F0B90B;  /* Vàng Binance */
+    --background-color: #181A20;  /* Đen nền */
+    --text-color: #FFFFFF; /* Trắng chữ chính */
+    --secondary-text: #B1B5C3; /* Xám chữ phụ */
+}
+
+/* 📌 Cấu hình chung */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔐 Giao diện đăng nhập & đăng ký */
+.auth-container {
+    width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.auth-container h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.auth-container a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.index-container {
+    display: flex;
+    flex-direction: row;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+input::placeholder {
+    color: var(--secondary-text);
+}
+
+input #amount{
+    width: 30%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+#payment-method {
+    width: 200px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--background-color);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+/* Giao diện chung */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #181818;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #181818;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.popup-content h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ffd700;
+}
+
+.option {
+    margin-bottom: 1rem;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.option h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.action-btn {
+    background: var(--primary-color);
+    color: #181818;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Bảng Crypto */
+.market-container, .favorite-coins, .top-gainers{
+    margin: 2rem auto;
+    max-width: 50rem;
+    background: #181818;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.market-container h2, .favorite-coins h2 , .top-gainers h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.coin-img {
+    width: 30px;
+    height: 30px;
+    max-width: 40px;  /* Giới hạn chiều rộng tối đa */
+    max-height: 40px; /* Giới hạn chiều cao tối đa */
+    border-radius: 50%;
+    object-fit: contain; /* Đảm bảo ảnh không bị méo */
+    margin-right: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    border-bottom: 0.05rem solid #333;
+    text-align: left;
+}
+
+th {
+    color: var(--primary-color);
+}
+
+td {
+    color: #ccc;
+}
+
+/* Nút dấu sao */
+
+.favorite-icon button {
+    width: 70px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.favorite-icon button :hover {
+    background-color: var(--primary-color);
+    color: #333;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#filterCoins, #filterSelect {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    background-color: #222;
+    color: white;
+    font-size: 1rem;
+    width: 250px;
+}
+
+#filterCoins::placeholder {
+    color: #888;
+}
+
+#sortOption {
+    width: 250px; /* Điều chỉnh độ rộng giống search bar */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    color: white;
+    background-color: #222;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#categorySelect {
+    width: 250px; /* Điều chỉnh độ rộng giống search bar */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    color: white;
+    background-color: #222;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+#sortOption:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0px 2px 8px rgba(0, 123, 255, 0.4);
+}
+
+#categorySelect:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0px 2px 8px rgba(0, 123, 255, 0.4);
+}
+
+#sortOption:hover {
+    border-color: #007bff;
+}
+
+#categorySelect:hover {
+    border-color: #007bff;
+}
+
+#loadMoreBtn {
+    display: block;
+    margin: 1rem auto;
+    background-color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#loadMoreBtn:hover {
+    background-color: #ffd700;
+}
+
+
+.coin-img:hover {
+    transform: scale(1.1);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+#login-section {
+    display: flex;
+    align-items: center;
+    float: right;
+    opacity: 0;
+    animation: fadeIn 0s ease-out forwards;
+}
+
+#username-display {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color); /* Màu vàng Binance */
+    margin: 0 10px;
+    text-transform: capitalize; /* Viết hoa chữ cái đầu */
+}
+
+.logout-btn {
+    font-size: 16px;
+    width: 50%;
+    padding: 5px 10px;
+    background: var(--primary-color); /* Màuvang Binance */
+    color: #181818; /* Màu đen nền */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+#menu-icon {
+    display: none; /* Ẩn trên PC, chỉ hiển thị trên mobile */
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#menu-content {
+    display: flex;
+    gap: 15px;
+}
+
+.popup {
+    display: none; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    padding: 20px; 
+    background: #181818; 
+    border: 1px solid black; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+#popup-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: none; 
+}
+
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    #menu-content {
+    display: none;
+    position: fixed; 
+    top: 50px; 
+    left: 70%;
+    transform: translateX(-50%); 
+    background: #181818;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 80%; 
+    max-width: 300px; 
+    z-index: 1000; 
+    }
+
+    nav a {
+    display: block;
+    padding: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+    }
+
+    .index-container {
+    flex-direction: column;
+    }
+
+}
